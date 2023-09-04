@@ -28,7 +28,7 @@ setup(
     install_requires=[
         'beautifulsoup4',
         'mkdocs>=1.0.4',
-        'selenium',
+        'selenium'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
