@@ -20,7 +20,7 @@ setup(
     long_description=load_file('README.md'),
     long_description_content_type="text/markdown",
     keywords='mkdocs pdf javascript selenium',
-    url='https://github.com/smaxtec/mkdocs-pdf-with-js-plugin',
+    url='https://github.com/MaxBrants/mkdocs-pdf-with-js-plugin',
     author='Stefan Brandstaetter',
     author_email='stefan.brandstaetter@smaxtec.com',
     license='MIT',
