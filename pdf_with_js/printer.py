@@ -3,7 +3,7 @@ import base64
 import json
 import os
 import sys
-#import chromedriver_autoinstaller
+import chromedriver_autoinstaller
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 class Printer():
 
     def __init__(self):
-        #chromedriver_autoinstaller.install()  
+        chromedriver_autoinstaller.install()  
 
         self.pages = []
         self.print_options = self._set_print_options()

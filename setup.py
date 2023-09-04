@@ -15,7 +15,7 @@ def load_file(filename):
 
 setup(
     name='mkdocs-pdf-with-js-plugin',
-    version=subprocess.check_output(["git", "describe", "--tags"]).decode().strip(),
+    version="1.0.0",
     description='A MkDocs plugin that exports your documentation as PDF with rendered JavaScript content.',
     long_description=load_file('README.md'),
     long_description_content_type="text/markdown",
@@ -28,7 +28,8 @@ setup(
     install_requires=[
         'beautifulsoup4',
         'mkdocs>=1.0.4',
-        'selenium'
+        'selenium',
+        'chromedriver_autoinstaller'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
