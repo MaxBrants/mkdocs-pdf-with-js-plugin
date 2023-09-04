@@ -29,6 +29,7 @@ setup(
         'beautifulsoup4',
         'mkdocs>=1.0.4',
         'selenium',
+        'chromedriver-autoinstaller',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
