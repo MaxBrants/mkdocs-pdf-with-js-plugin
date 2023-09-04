@@ -3,16 +3,17 @@ import base64
 import json
 import os
 import sys
-import chromedriver_autoinstaller
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
-
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 class Printer():
 
-    def __init__(self):
-        chromedriver_autoinstaller.install()  
+    def __init__(self):  
+        
 
         self.pages = []
         self.print_options = self._set_print_options()
@@ -88,9 +89,9 @@ class Printer():
         self._write_file(result['data'], page["pdf_file"])
 
     def _create_driver(self):
-        chromedriver_autoinstaller.install()  
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+        webdriver_options = Options()
 
-        webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('--headless')
         webdriver_options.add_argument('--disable-gpu')
         webdriver_options.add_argument('--no-sandbox')
