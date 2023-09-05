@@ -15,7 +15,7 @@ def load_file(filename):
 
 setup(
     name='mkdocs-pdf-with-js-plugin',
-    version="1.0.4",
+    version="1.0.5",
     description='A MkDocs plugin that exports your documentation as PDF with rendered JavaScript content.',
     long_description=load_file('README.md'),
     long_description_content_type="text/markdown",
