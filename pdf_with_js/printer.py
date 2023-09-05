@@ -3,14 +3,12 @@ import base64
 import json
 import os
 import sys
-import browser
 
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 
 class Printer():
 
@@ -93,13 +91,12 @@ class Printer():
     def _create_driver(self):
         webdriver_options = webdriver.ChromeOptions()
 
-        webdriver_options.binary_location = browsers.get("chrome")["path"]
-
         webdriver_options.add_argument('--headless')
         webdriver_options.add_argument('--disable-gpu')
         webdriver_options.add_argument('--no-sandbox')
         webdriver_options.add_argument('--disable-dev-shm-usage')
-        return webdriver.Chrome(options=webdriver_options,service=ChromeService(ChromeDriverManager().install()))
+        
+        return webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=webdriver_options,)
 
     def _set_print_options(self):
 
