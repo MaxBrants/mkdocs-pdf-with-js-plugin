@@ -1,4 +1,4 @@
-.print-first-page {
+div.print-first-page {
     display: none;
 }
 
@@ -28,7 +28,7 @@ div.download-btn {
 }
 
 @media print {
-    .print-first-page {
+    div.print-first-page {
         display: block;
         width: 100%;
         height: 100%;
