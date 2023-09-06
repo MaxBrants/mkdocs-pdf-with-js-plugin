@@ -42,8 +42,18 @@ class Printer():
         soup = BeautifulSoup(output_content, 'html.parser')
         soup = self._add_style(soup)
         soup = self._add_link(soup, page_paths)
-
+        
         return str(soup)
+    
+    def add_Cover_Page(self, output_content, cover_template):
+        
+        if cover_template != "":
+            cover_template = f'<div class="print-first-page" > {cover_template} </div>'
+            soup = BeautifulSoup(output_content, 'html.parser')
+            soup.article.insert(0, cover_template)
+            return str(soup)
+        
+        return output_content
 
     def _add_style(self, soup):
 

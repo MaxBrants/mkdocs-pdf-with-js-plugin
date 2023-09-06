@@ -1,3 +1,6 @@
+.print-first-page {
+    display: none;
+}
 
 div.download-btn {
     text-align: right;
@@ -13,7 +16,7 @@ div.download-btn {
     @top-left {
         font-size: x-small;
         content: 'smaXtec';
-    }
+    }    
     @top-center {
         font-size: x-small;
         content: string(chapter);
@@ -25,6 +28,11 @@ div.download-btn {
 }
 
 @media print {
+    .print-first-page {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
     div.download-btn {
         display: none;
@@ -32,7 +40,6 @@ div.download-btn {
 
     .md-typeset table:not([class]) {
         display: block;
-        border: none;
     }
 
     img {
@@ -52,6 +59,10 @@ div.download-btn {
 
     ul, ol, dl {
         page-break-before:avoid
+    }
+
+    body {
+        contain: strict;
     }
 
 }
