@@ -31,7 +31,7 @@ class PdfWithJS(BasePlugin):
         return nav
     
     def on_page_context(self, context, page, config, nav):
-
+        self
         cover_template = Template(self.config['coverTemplate'])
         self.cover_template = cover_template.render(context)
 

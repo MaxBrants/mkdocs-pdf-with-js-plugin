@@ -48,7 +48,7 @@ class Printer():
     def add_Cover_Page(self, output_content, cover_template):
         
         if cover_template != "":
-            cover_template = f'<div class="print-first-page" > {cover_template} </div>'
+            cover_template = f'<article class="print-first-page" > {cover_template} </article>'
             soup_cover_template = BeautifulSoup(cover_template)
 
             soup = BeautifulSoup(output_content, 'html.parser')

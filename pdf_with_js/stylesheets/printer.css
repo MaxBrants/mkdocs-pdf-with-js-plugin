@@ -1,4 +1,4 @@
-div.print-first-page {
+.print-first-page {
     display: none;
 }
 
@@ -7,7 +7,7 @@ div.download-btn {
 }
 
 @page {
-    size: a4 portrait;
+    size: a3 portrait;
     margin: 25mm 10mm 25mm 10mm;
     counter-increment: page;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -28,12 +28,44 @@ div.download-btn {
 }
 
 @media print {
-    div.print-first-page {
-        display: block;
+    .print-first-page {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+   }
+    .print-first-page > .wrapper {
+        flex: 1 0 auto;
+        text-align: center;
+        padding: 0 3rem;
+   }
+    .print-first-page > .wrapper.upper {
+        flex: 1 1 auto;
+        max-height: 30vh;
+   }
+    .print-first-page > .wrapper.upper > .logo {
         width: 100%;
         height: 100%;
-    }
-
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+   }
+    .print-first-page > .wrapper h1 {
+        font-size: 36pt;
+        line-height: 1.4;
+   }
+    .print-first-page > .wrapper h2 {
+        border: none;
+        bookmark-level: none;
+   }
+    .print-first-page > .properties {
+        flex: 0 0 auto;
+        text-align: right;
+        padding: 0 2rem;
+   }
+    .print-first-page > .properties p#copyright {
+        font-size: 80%;
+   }
+    
     div.download-btn {
         display: none;
     }
@@ -60,9 +92,4 @@ div.download-btn {
     ul, ol, dl {
         page-break-before:avoid
     }
-
-    body {
-        contain: strict;
-    }
-
 }
