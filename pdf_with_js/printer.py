@@ -20,8 +20,12 @@ class Printer():
         self.plugin_path = os.path.dirname(os.path.realpath(__file__))
 
     def add_page(self, page, config):
+        
+        print(page.file.url)
 
-        pdf_path = os.path.join(config["site_dir"], "pdfs", page.file.url)
+        temp_page_path = page.file.url.rsplit('/', 1)[0]
+
+        pdf_path = os.path.join(config["site_dir"], "pdfs", temp_page_path)
         os.makedirs(pdf_path, exist_ok=True)
         pdf_file = os.path.join(pdf_path, page.file.name) + ".pdf"
 
