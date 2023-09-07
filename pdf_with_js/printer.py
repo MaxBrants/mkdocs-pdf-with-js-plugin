@@ -20,8 +20,6 @@ class Printer():
         self.plugin_path = os.path.dirname(os.path.realpath(__file__))
 
     def add_page(self, page, config):
-        
-        print(page.file.url)
 
         temp_page_path = page.file.url.rsplit('/', 1)[0]
 
