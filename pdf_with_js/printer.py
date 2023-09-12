@@ -56,7 +56,7 @@ class Printer():
             soup = BeautifulSoup(output_content, 'html.parser')
             soup.article.insert_before(soup_cover_template)
             return str(soup)
-        
+
         return output_content
 
     def _add_style(self, soup):

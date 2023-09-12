@@ -29,6 +29,7 @@ div.download-btn {
 
 @media print {
     .print-first-page {
+        position: relative;
         display: flex;
         flex-direction: column;
         height: 100vh;
